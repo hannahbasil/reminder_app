@@ -1,7 +1,7 @@
 class CreateTasks < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
-      t.integer :user_id
+      t.references :user, index: true
       t.string :name
       t.text :description
       t.datetime :time_due
@@ -9,5 +9,6 @@ class CreateTasks < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_foreign_key :tasks, :users
   end
 end
