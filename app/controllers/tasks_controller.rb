@@ -1,6 +1,14 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
+  # before_action :current_user_must_be_owner, :only => [:show, :edit, :update, :destroy]
+
+  # def current_user_must_be_owner
+  #   if current_user != @task.user
+  #      redirect_to :back, :notice => "Nice try!"
+  #   end
+  # end
+
   # GET /tasks
   def index
     @tasks = current_user.tasks
