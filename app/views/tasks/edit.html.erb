@@ -2,11 +2,17 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Edit Task #<%= @task.id %></h3>
+        <h3 class="panel-title">Update Task</h3>
       </div>
       <div class="panel-body">
-        <%= render 'form', task: @task %>
-      </div>
+       <div class="btn-group btn-group-justified">
+         <%= link_to icon('chevron-left'), :back, class: "btn btn-primary" %>
+         <%= link_to icon('check'), task_url(@task.id), method: :delete, data: { confirm: "Congrats! Confirm you are done with this task." }, class: "btn btn-success" %>
+       </div>
+     </div>
+     <div class="panel-body">
+      <%= render 'form', task: @task %>
     </div>
   </div>
+</div>
 </div>

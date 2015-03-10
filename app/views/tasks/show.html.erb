@@ -4,14 +4,12 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Task #<%= @task.id %></h3>
+        <h3 class="panel-title"><%= @task.name.titleize %></h3>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
-              <dt>Name</dt>
-              <dd><%= @task.name %></dd>
 
               <dt>Description</dt>
               <dd><%= @task.description %></dd>
@@ -21,9 +19,6 @@
 
               <dt>Reminder at</dt>
               <dd><%= @task.reminder_at %></dd>
-
-              <dt>User</dt>
-              <dd><%= @task.user.username %></dd>
 
             </dl>
             <div class="btn-group btn-group-justified">

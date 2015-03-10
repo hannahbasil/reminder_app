@@ -2,9 +2,12 @@ User.destroy_all
 
 usernames = ["Hannah", "Caleb", "Aimee"]
 
+
 usernames.each do |username|
   user = User.create({
     :username => username,
+    :first_name => username,
+    :last_name => "Basil",
     :email => "#{username}@example.com",
     :password => "12341234",
     :password_confirmation => "12341234"

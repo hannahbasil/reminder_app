@@ -6,7 +6,7 @@
     <%= f.input :description %>
     <%= f.input :time_due %>
     <%= f.input :reminder_at %>
-    <%= f.association :user %>
+    <%= f.association :user, :as => :hidden %>
   </div>
 
   <div class="form-actions">
