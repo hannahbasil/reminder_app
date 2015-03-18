@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :description %>
+    <%= f.input :description, label: 'Notes' %>
     <%= f.input :time_due %>
     <%= f.input :reminder_at %>
     <%= f.association :user, :as => :hidden %>
