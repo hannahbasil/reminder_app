@@ -9,6 +9,7 @@ usernames.each do |username|
     :first_name => username,
     :last_name => "Basil",
     :email => "#{username}@example.com",
+    :phone_number => "7733506634",
     :password => "12341234",
     :password_confirmation => "12341234"
   })
