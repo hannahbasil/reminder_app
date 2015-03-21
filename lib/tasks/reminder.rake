@@ -2,7 +2,7 @@ namespace :reminder do
   desc "sends a text to user that reminder is due"
   task send: :environment do
     Task.all.each do |task|
-      if task.reminder_at+5.hours > Time.now && task.reminder_at+5.hours < Time.now+5.minutes
+      if task.reminder_at+5.hours > Time.now && task.reminder_at+5.hours < Time.now+10.minutes
 
     account_sid = ENV["ACCOUNT_SID"]
     auth_token = ENV["TWILIO_AUTH_TOKEN"]
@@ -12,7 +12,7 @@ namespace :reminder do
     @client.account.messages.create({
       :from => '+13126269816',
       :to => '+17733506634',
-      :body => 'Hello #{task.user.first_name}, this is your reminder to complete #{task.name}',
+      :body => "Hello #{task.user.first_name}, this is your reminder to complete #{task.name}",
     })
     puts "the text was sent for task#{task.user_id} for #{task.name}"
       end
@@ -22,3 +22,6 @@ namespace :reminder do
 
   end
 end
+
+
+# pick time zone or have it in form. phony gem. validated for phone numbers
