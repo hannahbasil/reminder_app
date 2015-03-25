@@ -2,7 +2,7 @@ namespace :reminder do
   desc "sends a text to user that reminder is due"
   task send: :environment do
     Task.all.each do |task|
-      if task.reminder_at+5.hours > Time.now && task.reminder_at+5.hours < Time.now+10.minutes
+      if task.reminder_at > Time.now && task.reminder_at < Time.now+10.minutes
 
     account_sid = ENV["ACCOUNT_SID"]
     auth_token = ENV["TWILIO_AUTH_TOKEN"]
